@@ -80,10 +80,17 @@ class App(customtkinter.CTk):
         
         #Now Network Frame
         self.NetworkFrame = Frame(self, "Network Info")
-        self.NetworkFrame.grid(row = 1, column = 2)
+        self.NetworkFrame.grid(row = 2, column = 2)
         #Making the Network Inner Frame
         self.NetworkFrameInner = Frame(self.NetworkFrame)
         self.NetworkFrameInner.grid(row = 1, column = 0 )
+
+        #Now for IO Stats Frame
+        self.IONetworkFrame = Frame(self.NetworkFrameInner, "IO Stats")
+        self.IONetworkFrame.grid(row = 1, column = 5)
+        #IO Stats Inner Frame
+        self.IONetworkFrameInner = Frame(self.IONetworkFrame)
+        self.IONetworkFrameInner.grid(row = 0, column = 1)
 #FRAMES-----FRAMESFRAMES-----FRAMESFRAMES-----FRAMESFRAMES-----FRAMESFRAMES-----FRAMESFRAMES-----FRAMESFRAMES-----FRAMESFRAMES-----FRAMES
 
         #Now making of the disk space labels to be later configured
@@ -222,31 +229,73 @@ class App(customtkinter.CTk):
         self.NetWorkInterfaceLb.grid(row = 1, column = 0)
         self.NetWorkInterfaceLb2.grid(row = 1, column = 1)
 
-        self.NetWorkStatusLbv
-        self.NetWorkStatusLb2
+        self.NetWorkStatusLb.grid(row = 2, column = 0)
+        self.NetWorkStatusLb2.grid(row = 2, column = 1)
         
-        self.NetWorkSpeedLb
-        self.NetWorkSpeedLb2
+        self.NetWorkSpeedLb.grid(row = 3, column = 0)
+        self.NetWorkSpeedLb2.grid(row = 3, column = 1)
 
-        self.NetWorkMTULb
-        self.NetWorkMTULb2
+        self.NetWorkMTULb.grid(row = 4, column = 0)
+        self.NetWorkMTULb2.grid(row = 4, column = 1)
 
-        self.NetWorkAddressLb
-        self.NetWorkAddressLb2
+        self.NetWorkAddressLb.grid(row = 5, column = 0)
+        self.NetWorkAddressLb2.grid(row = 5,column = 1)
 
-        self.NetWorkNetMaskLb
-        self.NetWorkNetMaskLb2
-
-
-        #Now for IO Stats
-        self.IONetworkFrame = Frame(self.NetworkFrameInner, "IO Stats")
-        self.IONetworkFrame.grid(row = 1, column = 3)
+        self.NetWorkNetMaskLb.grid(row = 6, column = 0)
+        self.NetWorkNetMaskLb2.grid(row = 6, column = 1)
 
 
 
 
+        #IO Labels
+        self.IOBytesSentLb = customtkinter.CTkLabel(self.IONetworkFrameInner, text="Bytes Sent: ")
+        self.IOBytesSentLb2 = customtkinter.CTkLabel(self.IONetworkFrameInner, text=None, bg_color="grey")
 
+        self.IOBytesRecievedLb = customtkinter.CTkLabel(self.IONetworkFrameInner, text="Bytes Sent: ")
+        self.IOBytesRecievedLb2 = customtkinter.CTkLabel(self.IONetworkFrameInner, text=None, bg_color="grey")
 
+        self.IOPacketSentLb = customtkinter.CTkLabel(self.IONetworkFrameInner, text="Bytes Sent: ")
+        self.IOPacketSentLb2 = customtkinter.CTkLabel(self.IONetworkFrameInner, text=None, bg_color="grey")
+
+        self.IOPacketRecievedLb = customtkinter.CTkLabel(self.IONetworkFrameInner, text="Bytes Sent: ")
+        self.IOPacketRecievedLb2 = customtkinter.CTkLabel(self.IONetworkFrameInner, text=None, bg_color="grey")
+
+        self.IOInputErrorsLb = customtkinter.CTkLabel(self.IONetworkFrameInner, text="Bytes Sent: ")
+        self.IOInputErrorsLb2 = customtkinter.CTkLabel(self.IONetworkFrameInner, text=None, bg_color="grey")
+
+        self.IOOutputErrorsLb = customtkinter.CTkLabel(self.IONetworkFrameInner, text="Bytes Sent: ")
+        self.IOOutputErrorsLb2 = customtkinter.CTkLabel(self.IONetworkFrameInner, text=None, bg_color="grey")
+
+        self.IOInputDropsLb = customtkinter.CTkLabel(self.IONetworkFrameInner, text="Bytes Sent: ")
+        self.IOInputDropsLb2 = customtkinter.CTkLabel(self.IONetworkFrameInner, text=None, bg_color="grey")
+
+        self.IOOutputDropsLb = customtkinter.CTkLabel(self.IONetworkFrameInner, text="Bytes Sent: ")
+        self.IOOutputDropsLb2 = customtkinter.CTkLabel(self.IONetworkFrameInner, text=None, bg_color="grey")
+        
+        #Now Placing IO Labels
+        self.IOBytesSentLb.grid(row = 1, column = 0)
+        self.IOBytesSentLb2.grid(row = 1, column = 1)
+
+        self.IOBytesRecievedLb.grid(row = 2, column = 0)
+        self.IOBytesRecievedLb2.grid(row = 2, column = 1)
+
+        self.IOPacketSentLb.grid(row = 3, column = 0)
+        self.IOPacketSentLb2.grid(row = 3, column = 1)
+
+        self.IOPacketRecievedLb.grid(row = 4, column = 0)
+        self.IOPacketRecievedLb2.grid(row = 4, column = 1)
+
+        self.IOInputErrorsLb.grid(row = 5, column = 0)
+        self.IOInputErrorsLb2.grid(row = 5, column = 1)
+
+        self.IOOutputErrorsLb.grid(row = 6, column = 0)
+        self.IOOutputErrorsLb2.grid(row = 6, column = 1)
+
+        self.IOInputDropsLb.grid(row = 7, column = 0)
+        self.IOInputDropsLb2.grid(row = 7, column = 1)
+
+        self.IOOutputDropsLb.grid(row = 8, column = 0)
+        self.IOOutputDropsLb2.grid(row = 8 ,column = 1)
 
 
 
